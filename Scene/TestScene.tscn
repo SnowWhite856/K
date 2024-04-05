@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://dpnnh2pgstn4n"]
+
+[ext_resource type="Shader" path="res://Assets/Shaders/DefaultSkyShader.gdshader" id="2_csyfx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_baqjo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nq1rg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r5dtj"]
+shader = ExtResource("2_csyfx")
+shader_parameter/skyColor = Color(0.423529, 0.607843, 1, 1)
+shader_parameter/horizontalColor = Color(1, 0.690196, 0.639216, 1)
+
+[sub_resource type="Sky" id="Sky_n35ij"]
+sky_material = SubResource("ShaderMaterial_r5dtj")
+
+[sub_resource type="Environment" id="Environment_otpu1"]
+background_mode = 2
+sky = SubResource("Sky_n35ij")
+ambient_light_source = 3
+ambient_light_color = Color(1, 0.87451, 0.85098, 1)
+ambient_light_sky_contribution = 0.9
+ambient_light_energy = 3.5
+reflected_light_source = 2
+
+[node name="TestScene" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(6.38578, 0, 0, 0, 0.202368, 0, 0, 0, 5.17215, 0, 0, 0)
+mesh = SubResource("BoxMesh_baqjo")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(6.45206, 0, 0, 0, 0.282319, 0, 0, 0, 5.2644, 0, 0, 0)
+shape = SubResource("BoxShape3D_nq1rg")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_otpu1")

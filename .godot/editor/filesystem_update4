@@ -1,0 +1,5 @@
+res://Scene/Player.tscn
+res://Assets/Shaders/DefaultSkyShader.gdshader
+res://Scripts/Camera.gd
+res://Scripts/Player.gd
+res://Scene/TestScene.tscn
