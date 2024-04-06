@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dpnnh2pgstn4n"]
+[gd_scene load_steps=8 format=3 uid="uid://dpnnh2pgstn4n"]
 
 [ext_resource type="Shader" path="res://Assets/Shaders/DefaultSkyShader.gdshader" id="2_csyfx"]
+[ext_resource type="PackedScene" uid="uid://b4ldn7i3qh3jb" path="res://Scene/Player.tscn" id="2_jeg1u"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_baqjo"]
 
@@ -35,6 +36,9 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(6.45206, 0, 0, 0, 0.282319, 0, 0, 0, 5.2644, 0, 0, 0)
 shape = SubResource("BoxShape3D_nq1rg")
+
+[node name="Player" parent="." instance=ExtResource("2_jeg1u")]
+Sens = 0.5
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_otpu1")

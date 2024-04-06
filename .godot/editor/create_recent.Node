@@ -1,10 +1,11 @@
+StaticBody3D
+DirectionalLight3D
+MeshInstance3D
 Node3D
-Node
-RigidBody3D
+WorldEnvironment
 Camera3D
 CharacterBody3D
-WorldEnvironment
+Node
+RigidBody3D
 CollisionShape3D
-StaticBody3D
-MeshInstance3D
 CollisionPolygon3D

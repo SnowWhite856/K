@@ -1,5 +1,7 @@
 res://Scene/Player.tscn
 res://Assets/Shaders/DefaultSkyShader.gdshader
-res://Scripts/Camera.gd
-res://Scripts/Player.gd
 res://Scene/TestScene.tscn
+res://Scene/wall.tscn
+res://Scene/floor.tscn
+res://Scene/ProceduralTest.tscn
+res://Scripts/ProceduralTest.gd

@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://bqcjo0jqs3sr"]
+
+[ext_resource type="Script" path="res://Scripts/ProceduralTest.gd" id="1_e313n"]
+[ext_resource type="Shader" path="res://Assets/Shaders/DefaultSkyShader.gdshader" id="2_5q0an"]
+[ext_resource type="PackedScene" uid="uid://b4ldn7i3qh3jb" path="res://Scene/Player.tscn" id="3_tbytk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6f00n"]
+shader = ExtResource("2_5q0an")
+shader_parameter/skyColor = Color(0.423529, 0.607843, 1, 1)
+shader_parameter/horizontalColor = Color(1, 0.690196, 0.639216, 1)
+
+[sub_resource type="Sky" id="Sky_3d5jj"]
+sky_material = SubResource("ShaderMaterial_6f00n")
+
+[sub_resource type="Environment" id="Environment_j2que"]
+background_mode = 2
+sky = SubResource("Sky_3d5jj")
+reflected_light_source = 2
+
+[node name="RoomProcedural" type="Node3D" node_paths=PackedStringArray("to")]
+script = ExtResource("1_e313n")
+RoomSize = Vector2(24.18, 105.08)
+to = NodePath("world")
+
+[node name="world" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_j2que")
+
+[node name="Player" parent="." instance=ExtResource("3_tbytk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.81186, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.121748, 0.992561, 0, -0.992561, -0.121748, 0, 11.6431, 0)
