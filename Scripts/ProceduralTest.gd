@@ -36,7 +36,7 @@ func CreateFloor() -> void:
 	for i in floorCountX:
 		for j in floorCountY:
 			floorX1 = floor.instantiate()
-			floorX1.position = position + Vector3(-RoomSize.x / 2 + floorSize.x * floorScaleX / 2 + i * floorScaleX * floorSize.x, -wallSize.y / 2, -RoomSize.y / 2 + floorSize.x * floorScaleY / 2 + j * floorScaleY * floorSize.x)
+			floorX1.position = position + Vector3(-RoomSize.x / 2 + floorSize.x * floorScaleX / 2 + i * floorScaleX * floorSize.x, -wallSize.z / 2, -RoomSize.y / 2 + floorSize.x * floorScaleY / 2 + j * floorScaleY * floorSize.x)
 			floorX1.scale = Vector3(floorScaleX, 1, floorScaleY)
 			to.add_child(floorX1)
 
